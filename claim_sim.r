@@ -7,14 +7,14 @@ set.seed(12345)
 ## 保険金額のベクトルを生成する関数の定義
 generate_claims <- function(n, prob, shape, scale) {
   occur <- rbinom(n=n, size=1, prob=prob)
-  amount <- rgamma(n=n, shape=1, scale=1)
+  amount <- rgamma(n=n, shape=shape, scale=scale)
   claim <- occur * amount  # 長さn_popのベクトルの要素ごとの掛け算
   return(claim)  # or simply `claim`
 }
 
 ## 保険金総額の分布をシミュレーション
 total_claims <- NULL  # `NULL` = `c()` = "長さ0のベクトル"
-for (i in seq(n_sim)) {
+for (i in 1:n_sim) {
   claims <- generate_claims(n_pop,
                             prob=0.05,
                             shape=1,

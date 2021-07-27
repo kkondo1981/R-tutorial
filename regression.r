@@ -23,5 +23,5 @@ lambda <- exp(2 * df$x1 + 3 * df$x2 - 4 * df$x3)
 df$y <- rpois(n, lambda)
 model <- glm(y ~ . + 0,
              data=df,
-             family=poisson())
+             family=poisson(link="log"))
 summary(model)

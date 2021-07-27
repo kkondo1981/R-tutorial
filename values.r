@@ -17,7 +17,7 @@ x <- c(x, 4, 5, 6)  # combine extra values
 x <- c(0.5, 1.2, 3.4)
 x <- 1:6  # sequence
 x <- seq(6)
-x <- "aaa"
+x <- c("aaa", "bbb")
 x <- TRUE  # or x <- T
 x <- FALSE  # or x <- F
 
